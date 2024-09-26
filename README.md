@@ -1,4 +1,4 @@
-# Amazon EC@ instance Setup for http to https
+# Amazon EC2 instance Setup for http to https
 
 ## Instance Configuration
 1. **Choose Ubuntu** (any size)
