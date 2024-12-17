@@ -203,3 +203,32 @@
     ```
 
     You should now be able to view your Streamlit application over HTTPS.
+
+
+
+------------------
+-----------------
+-----------------
+**For Lets encrypt renewal:**
+
+If you just want a quick, straightforward way to renew your existing Let’s Encrypt certificate without changing your entire configuration, you can temporarily stop Nginx, run the renewal, and then start Nginx again. This approach assumes you initially got your certificate with the `--standalone` method.
+
+**Steps:**
+
+1. **Stop Nginx** to free up port 80:
+   ```bash
+   sudo service nginx stop
+   ```
+
+2. **Renew the certificate:**
+   ```bash
+   sudo certbot renew
+   ```
+   Certbot will check if the certificate for `priglobal-data-governance.zapto.org` is due for renewal and attempt to renew it using the same method you originally used.
+
+3. **Start Nginx** again once renewal is complete:
+   ```bash
+   sudo service nginx start
+   ```
+
+After these steps, your certificate should be renewed and your site should be accessible over HTTPS again. This is the simplest method if you don’t want to alter your configuration.
